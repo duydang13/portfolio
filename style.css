@@ -1,0 +1,125 @@
+/* Import the Atkinson Hyperlegible Mono font */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono&display=swap');
+
+/* reset + box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Atkinson Hyperlegible Mono", monospace;
+  background: #B0B0B0;
+  color: #000;
+  line-height: 1.2;
+}
+
+/* HEADER */
+.header {
+    font-size: 12px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0.75%;
+    gap: 0.75rem;
+}
+.header-item {
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.header-item p {
+    /*white-space: pre-wrap;*/
+    white-space: normal;    /* ignore extra newlines/indentation in your HTML */
+    line-height: 1.2; 
+}
+
+/* PROJECT GRID */
+.folio-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /*grid-auto-rows: 200px;*/
+    gap: 0.75rem;
+    padding: 0.75%;
+}
+.folio-section a {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 4.25 / 3;
+}
+.folio-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* make the <a> a positioned container */
+.project-item {
+    position: relative;
+    overflow: visible;
+    transition: transform 0.3s ease;
+  }
+  
+  /* smooth scale on the img */
+  .project-item img {
+    transition: none;
+  }
+  
+  /* the magenta overlay, hidden by default */
+  .project-item .overlay {
+    position: absolute;
+    inset: 0;                        /* top:0; right:0; bottom:0; left:0; */
+    background: rgba(227,0,109,0.95);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    display: flex;                   /* for easy bottom-left text */
+    align-items: flex-end;           /* vertical = bottom */
+    padding: 1rem;
+
+    transition: opacity 0.3s ease;
+  }
+  
+  /* text styling */
+  .project-item .overlay-text {
+    line-height: 1.2;
+  }
+  .project-item .overlay-text h3 {
+    margin: 0;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .project-item .overlay-text p {
+    color: #B0B0B0;
+    margin: 0.2rem 0 0;
+    font-size: 12px;
+  }
+  
+  /* on hover: scale image + fade in overlay */
+  .project-item:hover {
+    transform: scale(1.03);
+    z-index: 10;
+  }
+  .project-item:hover .overlay {
+    opacity: 1;
+  }
+  
+
+
+
+/* FOOTER */
+.footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1rem 2rem;
+    font-size: 12px;
+    gap: 0.75rem;
+}
+.footer-item:last-child {
+    grid-column: 3 / span 2;
+    text-align: left;
+}
