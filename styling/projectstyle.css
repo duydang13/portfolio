@@ -1,0 +1,127 @@
+
+/* 1) Import font + reset */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: url('/imagehome/cursor.png') 0 0, auto;
+}
+
+/* 2) Base typography & background */
+body {
+  font-family: "Atkinson Hyperlegible Mono", monospace;
+  background: #B0B0B0;
+  color: #000;
+  line-height: 1.2;
+}
+
+/*────────────────────────────────────────────────────────
+  Project Description (4-col grid like your header)
+────────────────────────────────────────────────────────*/
+.project-description {
+  font-size: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1.5rem;
+}
+
+.prodes-item p {
+  white-space: normal;    /* ignore extra blank-line spacing */
+  line-height: 1.4;
+}
+
+#title {
+  padding: 1%;
+  font-weight: bold;
+}
+
+.project-description .prodes-item:last-child {
+  justify-self: end;
+  text-align: right;   
+}
+
+/*────────────────────────────────────────────────────────
+  Full-bleed photos
+────────────────────────────────────────────────────────*/
+.hero, .photo {
+  width: 100%;
+  margin: 0;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+/*────────────────────────────────────────────────────────
+  Foot navigation (4-col grid)
+────────────────────────────────────────────────────────*/
+.foot-navigation {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.foot-navigation .footnav-item p,
+.foot-navigation .footer-item {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Optional hover style on footnav links */
+.foot-navigation .footnav-item a, #top a, .prodes-item a {
+  transition: color 0.3s;
+  text-decoration: none;
+  color: #000;
+}
+.foot-navigation .footnav-item a:hover, #top a:hover, .prodes-item a:hover {
+  background-color: rgba(227,0,109,0.95);
+}
+
+/*────────────────────────────────────────────────────────
+  Bottom footer (same as homepage footer)
+────────────────────────────────────────────────────────*/
+.footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1%;
+  font-size: 12px;
+  gap: 0.75rem;
+}
+
+.footer-item:first-child {
+  grid-column: 1 / span 2;
+  text-align: left;
+  margin: 0;
+}
+
+.foot-navigation .footnav-item:last-child {
+  justify-self: end;
+}
+
+.footer .footer-item:last-child {
+  justify-self: end;
+  text-align: right;    /* optional, to align text inside */
+}
