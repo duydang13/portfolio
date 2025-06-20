@@ -8,6 +8,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  cursor: url('/imagehome/cursor.png') 0 0, auto;
 }
 
 body {
@@ -34,6 +35,36 @@ body {
     /*white-space: pre-wrap;*/
     white-space: normal;    /* ignore extra newlines/indentation in your HTML */
     line-height: 1.2; 
+}
+
+#navigation a {
+    color: #000;
+    text-decoration: none;
+    display: inline-block;      /* so background only covers text */
+    padding: 0.1em 0.2em;       /* a little breathing room for the “highlight” */
+    position: relative;
+}
+
+#navigation a:hover {
+    background-color: rgba(227,0,109,0.95);
+}
+
+#navigation {
+    position: fixed;
+    top: 0;        /* adjust to match your header’s left gutter */
+    width: 100%;       /* or whatever the nav column’s width is */
+    padding: 0.75%;
+    left: 0;
+    z-index: 100;
+    /*background: linear-gradient(
+      to bottom,
+      #B0B0B0 0%,
+      rgba(176,176,176,0) 100%
+    );*/
+}
+
+#archive-text p {
+    text-decoration: line-through;
 }
 
 /* PROJECT GRID */
@@ -115,7 +146,7 @@ body {
 .footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 1rem 2rem;
+    padding: 0.75%;
     font-size: 12px;
     gap: 0.75rem;
 }
@@ -123,3 +154,48 @@ body {
     grid-column: 3 / span 2;
     text-align: left;
 }
+
+
+/* Tablet: 800–1199px wide */
+@media (min-width: 800px) and (max-width: 1199px) {
+    .folio-section, .header, .footer {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    /* hide the *second* empty header cell only */
+    .header-item:empty:nth-child(2) {
+      display: none;
+    }
+  
+    /* and same for footer/project if needed */
+    .footer-item:empty:nth-child(1) {
+      display: none;
+    }
+
+    .footer-item:last-child {
+        grid-column: 2 / span 2;
+        text-align: left;
+    }
+  }
+  
+  /* Phone: up to 799px wide */
+  @media (max-width: 799px) {
+    .header,
+    .folio-section {
+      grid-template-columns: 1fr;
+    }
+
+    .footer {
+        display: block;
+    }
+  
+    /* keep the first empty slot, remove the second*/
+    .header-item:empty:nth-child(2) {
+      display: none;
+    }
+  
+    /* your other mobile tweaks… */
+    .header { padding: 1rem; }
+    .folio-section { gap: 1rem; padding: 1rem; }
+    .footer { padding: 1rem; font-size: 0.75rem; text-align: left; }
+  }
