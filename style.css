@@ -87,15 +87,16 @@ body {
     display: block;
 }
 
+/*PROJECT CARD*/
 /* make the <a> a positioned container */
-.project-item {
+.project-item, .archive-item {
     position: relative;
     overflow: visible;
     transition: transform 0.3s ease;
   }
   
   /* smooth scale on the img */
-  .project-item img {
+  .project-item, .archive-item img {
     transition: none;
   }
   
@@ -138,10 +139,48 @@ body {
   .project-item:hover .overlay {
     opacity: 1;
   }
+
+/*ARCHIVE CARD*/
+/* the magenta overlay, hidden by default */
+  .archive-item .overlay {
+    position: absolute;
+    inset: 0;                        /* top:0; right:0; bottom:0; left:0; */
+    background: rgba(15, 15, 15, 0.75);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    display: flex;                   /* for easy bottom-left text */
+    align-items: flex-end;           /* vertical = bottom */
+    padding: 1rem;
+
+    transition: opacity 0.3s ease;
+  }
   
-
-
-
+  /* text styling */
+  .archive-item .overlay-text {
+    line-height: 1.2;
+  }
+  .archive-item .overlay-text h3 {
+    margin: 0;
+    color: rgba(227,0,109);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .archive-item .overlay-text p {
+    color: #B0B0B0;
+    margin: 0.2rem 0 0;
+    font-size: 12px;
+  }
+  
+  /* on hover: scale image + fade in overlay */
+  .archive-item:hover {
+    transform: scale(1.03);
+    z-index: 10;
+  }
+  .archive-item:hover .overlay {
+    opacity: 1;
+  }
+  
 /* FOOTER */
 .footer {
     display: grid;
