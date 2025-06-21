@@ -1,6 +1,6 @@
 
 /* 1) Import font + reset */
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap');
 
 *,
 *::before,
@@ -8,7 +8,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  cursor: url('/imagehome/cursor.png') 0 0, auto;
+  cursor: url('imagehome/cursor.png') 0 0, auto;
 }
 
 /* 2) Base typography & background */
