@@ -81,5 +81,40 @@
             <p><a href="">[back to top]</a></p><!-- Lead to top of page -->
         </div>
     </div>
+
+    <script>
+        (function() {
+          const photos = document.querySelectorAll('.photo-container img');
+          const io = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                obs.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0.1
+          });
+      
+          photos.forEach(img => io.observe(img));
+        })();
+    </script>
+
+    <script>
+    (function() {
+      const heroImg = document.querySelector('.hero img');
+      const descSection = document.querySelector('.project-description');
+      const fadeStart = 0;                                  // scrollY at which fade begins
+      const fadeEnd   = descSection.offsetTop;              // scrollY where 100% faded
+  
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        // compute normalized 0 → 1
+        let t = (y - fadeStart) / (fadeEnd - fadeStart);
+        t = Math.min(Math.max(t, 0), 1);
+        heroImg.style.opacity = 1 - t;
+      });
+    })();
+    </script>
 </body>
 </html>

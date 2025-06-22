@@ -71,6 +71,9 @@ body {
   padding-left: 1%;
   padding-right: 1%;
   padding-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;           
+  background-color: #B0B0B0;
 }
 
 .prodes-item p {
@@ -81,6 +84,9 @@ body {
 #title {
   padding: 1%;
   font-weight: bold;
+  position: relative;
+  z-index: 2;           
+  background-color: #B0B0B0;
 }
 
 .project-description .prodes-item:last-child {
@@ -96,11 +102,23 @@ body {
   margin: 0;
 }
 
+.hero {
+  position: sticky;
+  top: 0;
+  height: 100vh;           /* full browser height */
+  overflow: hidden;        /* crop the img if it’s taller */
+  z-index: 1;              /* sit behind the description */
+}
+
 .hero img {
   display: block;
   width: 100%;
   height: auto;
   object-fit: cover;
+  transition: opacity 0.2s ease-out;
+  will-change: opacity;
+  position: relative;
+  z-index: 1;
 }
 
 .photo-container img, .photo-container-1 img {
@@ -108,12 +126,24 @@ body {
   width: 100%;
   height: auto;
   object-fit: cover;
-  padding: 0;               /* ← reset this */
+  padding: 0;             
   margin: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.photo-container img.in-view, .photo-container-1 img.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .photo-container {
   padding: 0 1%;
+  position: relative;
+  z-index: 2;           
+  background-color: #B0B0B0;
 }
 
 .photo-container-1 {
@@ -121,6 +151,9 @@ body {
   flex-direction: column;
   gap: 0.75rem;
   padding: 0 1%;
+  position: relative;
+  z-index: 2;           
+  background-color: #B0B0B0;
 }
 
 .photos {
@@ -128,6 +161,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 0.75%;
 }
+
 /* Foot navigation*/
 .foot-navigation {
   display: grid;
@@ -137,6 +171,9 @@ body {
   padding-bottom: 1.5rem;
   padding-left: 1%;
   padding-right: 1%;
+  position: relative;
+  z-index: 2;           
+  background-color: #B0B0B0;
 }
 
 .foot-navigation .footnav-item p,
@@ -161,6 +198,9 @@ body {
   padding: 1%;
   font-size: 12px;
   gap: 0.75rem;
+  position: relative;
+  z-index: 2;           
+  background-color: #B0B0B0;
 }
 
 .footer-item:first-child {
