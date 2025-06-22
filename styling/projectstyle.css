@@ -19,9 +19,49 @@ body {
   line-height: 1.2;
 }
 
-/*────────────────────────────────────────────────────────
-  Project Description (4-col grid like your header)
-────────────────────────────────────────────────────────*/
+/*Navigation*/
+.header {
+  font-size: 12px;
+  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0.75%;
+  gap: 0.75rem;
+}
+.header-item {
+  padding-left: 1%;
+  padding-right: 1%;
+  position: fixed;
+}
+.header-item p {
+  /*white-space: pre-wrap;*/
+  white-space: normal;    /* ignore extra newlines/indentation in your HTML */
+  line-height: 1.2; 
+}
+
+#navigation a {
+  color: #000;
+  text-decoration: none;
+  display: inline-block;      /* so background only covers text */
+  padding: 0.1em 0.2em;       /* a little breathing room for the “highlight” */
+  position: relative;
+}
+
+#navigation a:hover {
+  background-color: rgba(227,0,109,0.95);
+}
+
+#navigation {
+  top: 0;        /* adjust to match your header’s left gutter */
+  width: 100%;       /* or whatever the nav column’s width is */
+  padding: 0.75%;
+  left: 0;
+  z-index: 100;
+  background: #B0B0B0;
+  border-bottom: #000;
+}
+
+/*Project Description*/
 .project-description {
   font-size: 12px;
   display: grid;
@@ -50,7 +90,7 @@ body {
 /*────────────────────────────────────────────────────────
   Full-bleed photos
 ────────────────────────────────────────────────────────*/
-.hero, .photo {
+.hero, .photo-container {
   width: 100%;
   margin: 0;
 }
@@ -62,7 +102,7 @@ body {
   object-fit: cover;
 }
 
-.photo img {
+.photo-container img {
   display: block;
   width: 100%;
   height: auto;
