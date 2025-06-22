@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Trial (deconstructed)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styling/projectstyle.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-item" id="navigation">
+            <p><a href="../index.html">Folio</a></p>
+        <p><a href="../archive.html">Archive</a></p>
+    </div>
+    </div>
+
+    <div class="hero"><img src="../photos/trial/trial1.jpg" alt=""></div>
+
+    <div id="title">
+        <h1>THE TRIAL (deconstructed)</h1>
+    </div>
+
+    <div class="project-description">
+        <div class="prodes-item" id="category">
+            <p>Book Design
+                <br>Typography
+                <br>Book-binding
+            </p>
+        </div>
+        <div class="prodes-item"></div><!-- Empty column -->
+        <div class="prodes-item" id="description">
+            <p>Welcome to the Editorial New Hotel, a young, cool and chic hotel for type lovers. 
+            This type specimen for Editorial New takes the form of a narrow, vertical booklet inspired by the typeface’s condensed letterforms. 
+            Conceptualised as a hotel experience, the specimen demonstrates the font’s versatility across different applications – from wayfinding to body copy. 
+            The design juxtaposes modern elements (such as the bold “brat green” color) with traditional layouts to reflect Editorial New’s character as a contemporary serif with vintage charm. 
+            Through interactive materials and careful typography, the specimen showcases the typeface both as a functional communication tool and compositional element.</p>
+        </div>
+        <div class="prodes-item"><p><a href="../">[back]</a></p></div>
+    </div>
+
+    <div class="photo-container">
+        <img src="../photos/trial/trial2.jpg" alt="">
+        <img src="../photos/trial/trial3.jpg" alt="">
+        <img src="../photos/trial/trial4.jpg" alt="">
+        <img src="../photos/trial/trial7.jpeg" alt="">
+        <img src="../photos/trial/trial5.jpeg" alt="">
+        <img src="../photos/trial/trial6.jpg" alt="">
+        <img src="../photos/trial/trial9.jpeg" alt="">
+        <img src="../photos/trial/trial8.jpg" alt="">
+        <img src="../photos/trial/trial10.jpg" alt="">
+        <img src="../photos/trial/trial11.jpg" alt="">
+        <img src="../photos/trial/trial12.jpeg" alt="">
+        <img src="../photos/trial/trial13.jpeg" alt="">
+        <img src="../photos/trial/trial14.jpeg" alt="">
+        <img src="../photos/trial/trial15.jpeg" alt="">
+        <img src="../photos/trial/trial16.jpeg" alt="">
+        <img src="../photos/trial/trial17.jpeg" alt="">
+        <img src="../photos/trial/trial18.jpeg" alt="">
+        <img src="../photos/trial/trial19.jpg" alt="">
+        <img src="../photos/trial/trial20.jpg" alt="">
+        <img src="../photos/trial/trial21.jpg" alt="">
+        <img src="../photos/trial/trial22.jpeg" alt="">
+        <img src="../photos/trial/trial23.jpeg" alt="">  
+    </div>
+
+
+    <div class="foot-navigation">
+        <div class="footnav-item">
+            <p><a href="../projects/meltdown.html">[previous project]</a></p><!-- link to previous project -->
+        </div>
+        <div class="footer-item"></div><!-- Empty column -->
+        <div class="footer-item"></div><!-- Empty column -->
+        <div class="footnav-item">
+            <p><a href="../projects/come-in.html">[next project]</a></p><!-- link to next project -->
+        </div>
+    </div>
+
+   
+    <div class="footer">
+        <div class="footer-item"><!-- Span two columns -->
+            <p>Copyright duydang2025. Website typeset in Atkinson Hyperlegible Mono.</p>
+        </div>
+        <div class="footer-item"></div><!-- Empty column -->
+        <div class="footer-item" id="top">
+            <p><a href="">[back to top]</a></p><!-- Lead to top of page -->
+        </div>
+    </div>
+
+    <script>
+        (function() {
+          const photos = document.querySelectorAll('.photo-container img');
+          const io = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                obs.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0.1
+          });
+      
+          photos.forEach(img => io.observe(img));
+        })();
+      </script>
+
+    <script>
+    (function() {
+      const heroImg = document.querySelector('.hero img');
+      const descSection = document.querySelector('.project-description');
+      const fadeStart = 0;                                  // scrollY at which fade begins
+      const fadeEnd   = descSection.offsetTop;              // scrollY where 100% faded
+  
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        // compute normalized 0 → 1
+        let t = (y - fadeStart) / (fadeEnd - fadeStart);
+        t = Math.min(Math.max(t, 0), 1);
+        heroImg.style.opacity = 1 - t;
+      });
+    })();
+    </script>
+    
+</body>
+</html>
