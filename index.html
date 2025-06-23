@@ -134,7 +134,23 @@
         <div class="footer-item"><!-- Span two columns -->
             <p>Copyright duydang2025. Website typeset in Atkinson Hyperlegible Mono.</p>
         </div>
-        
     </div>
+
+    <script>
+        (function() {
+          const nav = document.getElementById('navigation');
+          // capture where the nav originally sits in the page flow:
+          const anchorY = nav.getBoundingClientRect().top + window.pageYOffset;
+      
+          window.addEventListener('scroll', () => {
+            if (window.pageYOffset >= anchorY) {
+              nav.classList.add('stuck');
+            } else {
+              nav.classList.remove('stuck');
+            }
+          });
+        })();
+      </script>
+      
 </body>
 </html>

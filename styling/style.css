@@ -218,22 +218,54 @@ body {
   
   /* Phone: up to 799px wide */
   @media (max-width: 799px) {
-    .header,
+    /* 1) Turn header into a vertical flex flow instead of grid */
+    .header {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;    /* your mobile padding */
+      gap: 1rem;        /* vertical spacing between items */
+    }
+
+    /* Reset only the other items, but leave #navigation alone */
+.header-item:not(#navigation) {
+  position: static !important;
+}
+  
+    /* 3) Hide the two empty placeholders */
+    .header-item:empty {
+      display: none;
+    }
+  
+    /* 4) Re‐order the three real items:
+        contact first, description second, navigation last */
+    #contact     { order: 1; }
+    #description { order: 2; }
+    #navigation  { 
+      order: 3;
+        position: static;   /* default */
+        transition: none;   /* no transition needed here */
+    }
+      #navigation.stuck {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-left: 1rem;
+        width: 100%;
+        background: #B0B0B0;
+        z-index: 100;
+      }
+
     .folio-section {
       grid-template-columns: 1fr;
+      gap: 1rem; 
+      padding: 1rem;
     }
 
     .footer {
         display: block;
+        padding: 1rem; 
+        font-size: 0.75rem; 
+        text-align: left;
     }
-  
-    /* keep the first empty slot, remove the second*/
-    .header-item:empty:nth-child(2) {
-      display: none;
-    }
-  
-    /* your other mobile tweaks… */
-    .header { padding: 1rem; }
-    .folio-section { gap: 1rem; padding: 1rem; }
-    .footer { padding: 1rem; font-size: 0.75rem; text-align: left; }
   }
+  
