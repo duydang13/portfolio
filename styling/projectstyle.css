@@ -102,8 +102,7 @@ body {
 .hero {
   position: sticky;
   top: 2rem;
-  /*height: 100vh;         /* full browser height */
-  overflow: hidden;        /* crop the img if it’s taller */
+  height: 100%;  /* full browser height */ 
   z-index: 1;              /* sit behind the description */
 }
 
@@ -235,12 +234,18 @@ body {
 /* at the bottom of projectstyle.css */
 @media (max-width: 799px) {
   #title, .project-description, 
-  .photo-container, .photo-container-1, .foot-navigation,
-  .footer {
+  .photo-container, .photo-container-1, .foot-navigation {
     padding-left: 3%;
     padding-right: 3%;
     padding-top: 2%;
     padding-bottom: 0%;
+  }
+
+  .footer {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
   }
 
   #navigation {
@@ -252,6 +257,15 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
+
+  .foot-navigation .footnav-item p {
+    font-size: 12px;
+  }
+
+  .footer .footer-item p {
+    font-size: 10px;
+  }
+
   /* hide the two empty middle cells */
   .foot-navigation .footer-item:empty {
     display: none;

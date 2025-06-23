@@ -45,7 +45,6 @@
         <img src="../photos/notmood/notmood3.jpg" alt="">
         <img src="../photos/notmood/notmood4.jpg" alt="">
         <img src="../photos/notmood/notmood5.jpg" alt="">
-        <img src="../photos/notmood/notmood6.jpg" alt="">
         <img src="../photos/notmood/notmood7.jpg" alt="">
     </div>
     
@@ -73,22 +72,34 @@
     </div>
 
     <script>
-        (function() {
-          const photos = document.querySelectorAll('.photo-container img');
-          const io = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
-                obs.unobserve(entry.target);
-              }
-            });
-          }, {
-            threshold: 0.1
+      window.addEventListener('load', () => {
+        // 1) Jump to top so scroll position never carries over
+        window.scrollTo(0, 0);
+    
+        // 2) Grab all your project images (both containers)
+        const photos = document.querySelectorAll(
+          '.photo-container img, .photo-container-1 img'
+        );
+    
+        // 3) Clear any old in-view classes
+        photos.forEach(img => img.classList.remove('in-view'));
+    
+        // 4) Observe with threshold 0 → fires as soon as any pixel is visible
+        const io = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              obs.unobserve(entry.target);
+            }
           });
-      
-          photos.forEach(img => io.observe(img));
-        })();
-      </script>
+        }, {
+          threshold: 0
+        });
+    
+        // 5) Start observing
+        photos.forEach(img => io.observe(img));
+      });
+    </script>   
 
     <script>
     (function() {
