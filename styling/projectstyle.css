@@ -23,12 +23,9 @@ body {
 .header {
   font-size: 12px;
   text-align: left;
-  padding: 0.75%;
-  gap: 0.75rem;
 }
+
 .header-item {
-  padding-left: 1%;
-  padding-right: 1%;
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -104,8 +101,8 @@ body {
 
 .hero {
   position: sticky;
-  top: 0;
-  height: 100vh;           /* full browser height */
+  top: 2rem;
+  /*height: 100vh;         /* full browser height */
   overflow: hidden;        /* crop the img if it’s taller */
   z-index: 1;              /* sit behind the description */
 }
@@ -180,6 +177,7 @@ body {
 .foot-navigation .footer-item {
   margin: 0;
   white-space: pre-wrap;
+  font-size: 16px;
 }
 
 .foot-navigation .footnav-item a, #top a, .prodes-item a {
@@ -217,3 +215,103 @@ body {
   justify-self: end;
   text-align: right; 
 }
+
+
+
+/* Tablet: 800–1199px wide */
+@media (min-width: 800px) and (max-width: 1199px) {
+  .project-description, .foot-navigation, .footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+  /* hide the *second* empty header cell only */
+  .prodes-item:empty:nth-child(2), .footer-item:empty:nth-child(2), .footer-item:empty:nth-child(2)  {
+    display: none;
+  }
+
+}
+
+/* at the bottom of projectstyle.css */
+@media (max-width: 799px) {
+  #title, .project-description, 
+  .photo-container, .photo-container-1, .foot-navigation,
+  .footer {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 2%;
+    padding-bottom: 0%;
+  }
+
+  #navigation {
+    padding-left: 3%;
+  }
+  /* 1) Foot-navigation: 2 equal columns */
+  .foot-navigation {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  /* hide the two empty middle cells */
+  .foot-navigation .footer-item:empty {
+    display: none;
+  }
+   /* if you have two nav-items (prev + next) … */
+   .foot-navigation .footnav-item:first-child:not(:only-child) {
+    /* “previous” stays in col 1, left-aligned */
+    grid-column: 1;
+    justify-self: start;
+  }
+  .foot-navigation .footnav-item:last-child {
+    /* “next” stays in col 2, right-aligned */
+    grid-column: 2;
+    justify-self: end;
+  }
+
+  /* but if there’s only one nav-item (the “next” on project #1)… */
+  .foot-navigation .footnav-item:only-child {
+    /* force it into col 2 */
+    grid-column: 2;
+    justify-self: end;
+  }
+
+  /* 2) Footer: 2 equal columns */
+  .footer {
+    display: grid;
+  }
+  .footer .footer-item:last-child {
+    justify-self: end;
+    text-align: right;
+  }
+
+  .project-description {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "category back"
+      "description description";
+    gap: 0.75rem;
+  }
+
+  /* Hide that empty placeholder (2nd child) */
+  .project-description > .prodes-item:nth-child(2) {
+    display: none;
+  }
+
+  /* Assign areas by selector */
+  #category {
+    grid-area: category;
+  }
+
+  /* last .prodes-item is your [back] link */
+  .project-description > .prodes-item:last-child {
+    grid-area: back;
+    justify-self: end;     /* keep “back” on the right half */
+  }
+
+  #description {
+    grid-area: description;
+  }
+}
+
