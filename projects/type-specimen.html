@@ -154,7 +154,7 @@
     })();
     </script>-->
 
-<script>
+    <script>
     window.addEventListener('load', () => {
       // Reset scroll so animations always start from the top
       window.scrollTo(0, 0);
@@ -171,8 +171,8 @@
       window.addEventListener('resize', updateFadeEnd);
     
       window.addEventListener('scroll', () => {
-        // Only fade on larger viewports
-        if (window.innerWidth > 1199 && heroImg) {
+         //Only fade on larger viewports
+        if (window.innerWidth > 799 && heroImg) {
           const t = Math.min(Math.max(window.scrollY / fadeEnd, 0), 1);
           heroImg.style.opacity = 1 - t;
         }

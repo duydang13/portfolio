@@ -101,22 +101,31 @@
       });
     </script>   
 
-    <script>
-    (function() {
-      const heroImg = document.querySelector('.hero img');
-      const descSection = document.querySelector('.project-description');
-      const fadeStart = 0;                                  // scrollY at which fade begins
-      const fadeEnd   = descSection.offsetTop;              // scrollY where 100% faded
+  <script>
+  window.addEventListener('load', () => {
+    // Reset scroll so animations always start from the top
+    window.scrollTo(0, 0);
   
-      window.addEventListener('scroll', () => {
-        const y = window.scrollY;
-        // compute normalized 0 → 1
-        let t = (y - fadeStart) / (fadeEnd - fadeStart);
-        t = Math.min(Math.max(t, 0), 1);
+    const heroImg     = document.querySelector('.hero img');
+    const descSection = document.querySelector('.project-description');
+    let fadeEnd;
+  
+    function updateFadeEnd() {
+      // Distance from top of document to top of description
+      fadeEnd = descSection.getBoundingClientRect().top + window.scrollY;
+    }
+    updateFadeEnd();
+    window.addEventListener('resize', updateFadeEnd);
+  
+    window.addEventListener('scroll', () => {
+       //Only fade on larger viewports
+      if (window.innerWidth > 799 && heroImg) {
+        const t = Math.min(Math.max(window.scrollY / fadeEnd, 0), 1);
         heroImg.style.opacity = 1 - t;
-      });
-    })();
-    </script>
+      }
+    });
+  });
+  </script>
       
 </body>
 </html>
