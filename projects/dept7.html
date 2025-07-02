@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dept.7 Board Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styling/projectstyle.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-item" id="navigation">
+            <p><a href="../index.html">Folio</a></p>
+        <p><a href="../archive.html">Archive</a></p>
+    </div>
+    </div>
+
+    <div class="hero"><img src="../photos/dept7/dept.jpg" alt=""></div>
+
+    <div id="title">
+        <h1>Dept.7 Board Game</h1>
+    </div>
+
+    <div class="project-description">
+        <div class="prodes-item" id="category">
+            <p>Game Design</p>
+            <p>Visual Identity/ Branding
+            <br>Typeface Design
+            </p>
+        </div>
+        <div class="prodes-item"></div><!-- Empty column -->
+        <div class="prodes-item" id="description">
+            <p>This project reimagines the branding for the 30th anniversary of Meltdown, the UK’s longest-running artist-curated music festival, with a theme of blending nostalgia and innovation. 
+            The visual identity pays homage to past editions while embracing a forward-looking aesthetic. 
+            A fusion of classic serif and modern sans-serif typefaces, combined with a grid-based yet dynamic layout, reflects the interplay of tradition and avant-garde. 
+            The logo highlights the number 30, symbolising continuity and progression. Four posters reinterpret past festival editions, maintaining a unified system for the anniversary while celebrating each curator’s unique influence. 
+            The identity seamlessly adapts across media, ensuring a cohesive and contemporary festival experience. </p>
+        </div>
+        <div class="prodes-item"><p><a href="../">[back]</a></p></div>   
+    </div>
+
+    <div class="photo-container-1">
+      <video class="photo" autoplay muted loop playsinline preload="auto">
+        <source src="../videos/dept7/dept1.mp4" type="video/mp4">
+    </video>
+        <img src="../photos/dept7/dept2.jpg" alt="">
+        <video class="photo" autoplay muted loop playsinline preload="auto">
+            <source src="../videos/dept7/dept3.mp4" type="video/mp4">
+        </video>
+        <img src="../photos/dept7/dept4.jpg" alt="">
+        <div class="photos">
+            <img src="../photos/dept7/dept5.jpg" alt="">
+            <img src="../photos/dept7/dept6.gif" alt="">
+        </div>
+        <img src="../photos/dept7/dept7.jpg" alt="">
+        <div class="photos">
+            <img src="../photos/dept7/dept8.jpg" alt="">
+            <img src="../photos/dept7/dept9.jpg" alt="">
+        </div>
+        <img src="../photos/dept7/dept15.jpg" alt="">
+        <img src="../photos/dept7/dept19.jpg" alt="">
+        <img src="../photos/dept7/dept20.jpg" alt="">
+        <div class="photos">
+            <img src="../photos/dept7/dept11.jpg" alt="">
+            <img src="../photos/dept7/dept13.jpg" alt="">
+        </div>
+        <img src="../photos/dept7/dept14.jpg" alt="">
+        <div class="photos">
+          <img src="../photos/dept7/dept18.jpg" alt="">
+          <img src="../photos/dept7/dept17.jpg" alt="">
+        </div>
+        <img src="../photos/dept7/dept16.jpg" alt="">
+        
+    </div>
+    
+
+    <div class="foot-navigation">
+        <div class="footnav-item">
+            <p><a href="../projects/mailbox.html">[previous project]</a></p><!-- link to previous project -->
+        </div>
+        <div class="footer-item"></div><!-- Empty column -->
+        <div class="footer-item"></div><!-- Empty column -->
+        <div class="footnav-item">
+            <p><a href="../projects/mood.html">[next project]</a></p><!-- link to next project -->
+        </div>
+    </div>
+
+   
+    <div class="footer">
+        <div class="footer-item"><!-- Span two columns -->
+            <p>Copyright duydang2025. Website typeset in Atkinson Hyperlegible Mono.</p>
+        </div>
+        <div class="footer-item"></div><!-- Empty column -->
+        <div class="footer-item" id="top">
+            <p><a href="">[back to top]</a></p><!-- Lead to top of page -->
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+          // 1) Jump to top so scroll position never carries over
+          window.scrollTo(0, 0);
+      
+          // 2) Grab all your project images (both containers)
+          const photos = document.querySelectorAll(
+            '.photo-container img, .photo-container-1 img'
+          );
+      
+          // 3) Clear any old in-view classes
+          photos.forEach(img => img.classList.remove('in-view'));
+      
+          // 4) Observe with threshold 0 → fires as soon as any pixel is visible
+          const io = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                obs.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0
+          });
+      
+          // 5) Start observing
+          photos.forEach(img => io.observe(img));
+        });
+      </script>
+    
+
+    <script>
+        window.addEventListener('load', () => {
+          // Reset scroll so animations always start from the top
+          window.scrollTo(0, 0);
+        
+          const heroImg     = document.querySelector('.hero img');
+          const descSection = document.querySelector('.project-description');
+          let fadeEnd;
+        
+          function updateFadeEnd() {
+            // Distance from top of document to top of description
+            fadeEnd = descSection.getBoundingClientRect().top + window.scrollY;
+          }
+          updateFadeEnd();
+          window.addEventListener('resize', updateFadeEnd);
+        
+          window.addEventListener('scroll', () => {
+             //Only fade on larger viewports
+            if (window.innerWidth > 799 && heroImg) {
+              const t = Math.min(Math.max(window.scrollY / fadeEnd, 0), 1);
+              heroImg.style.opacity = 1 - t;
+            }
+          });
+        });
+        </script>
+</body>
+</html>
