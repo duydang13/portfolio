@@ -2,55 +2,206 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>thedesignflop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>thedesignflop — Archive</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styling/style.css">
+    <link rel="stylesheet" href="styling/archivestyle.css">
 </head>
 <body>
-    <div class="header">
-        <div class="header-item" id="navigation">
-            <p><a href="index.html">Folio</a>
-                <br><a href="archive.html">Archive</a></p>
-        </div>
-        <div class="header-item"></div><!-- Empty column -->
-        <div class="header-item"></div><!-- Empty column -->
-        <div class="header-item" id="archive-text">
-            <p>other projects that i've done but for one reason or another did not make the cut for the main folio</p>
-        </div>
-        <div class="header-item" id="contact">
-            <p>Duy Dang
-                <br>e: dangnhatduy2110@gmail.com
-                <br>i: the.design.flop
-                <br>
-                <br>pdf folio
-                <br>cv is available upon request!
-            </p>
-        </div>
+<div class="header">
+    <div class="header-item" id="navigation">
+        <p><a href="index.html">Folio</a>
+            <br><a href="archive.html">Archive</a></p>
     </div>
+    <div class="header-item"></div>
+    <div class="header-item"></div>
+    <div class="header-item" id="archive-text">
+        <p>other projects that i've done but for one reason or another did not make the cut for the main folio</p>
+    </div>
+    <div class="header-item" id="contact">
+        <p>Duy Dang
+            <br>e: dangnhatduy2110@gmail.com
+            <br>i: the.design.flop
+            <br>
+            <br>pdf folio
+            <br>cv is available upon request!
+        </p>
+    </div>
+</div>
 
-    <div class="folio-section">
-        <a href="" class="archive-item">
-            <img src="imagearchive/camp.jpg" alt="camp">
-            <span class="under-text">[under construction]</span>
-            <div class="overlay">
-                <div class="overlay-text">
-                    <h3>CAMP MAGAZINE</h3>
-                    <p>Illustration/Publication Design</p>
-                </div>
+<main class="archive-main">
+    <div class="archive-projects">
+        <!-- PROJECT 1 -->
+        <div class="archive-project">
+            <div class="project-year">2024</div>
+            <div class="project-details">
+                <h3>CAMP MAGAZINE — ISSUE 03</h3>
+                <p>Editorial design & illustration. A nomadic print experiment about subculture, diy archives and radical play. Features risograph inserts and hand-bound spine.</p>
             </div>
-        </a>
-    </div>
-
-    <div class="footer">
-        <div class="footer-item"></div><!-- Empty column -->
-        <div class="footer-item"></div><!-- Empty column -->
-        <div class="footer-item"><!-- Span two columns -->
-            <p>Copyright duydang2025. Website typeset in Atkinson Hyperlegible Mono.</p>
+            <div class="carousel-container" data-images='[
+                "https://picsum.photos/id/154/800/600", 
+                "https://picsum.photos/id/169/800/600", 
+                "https://picsum.photos/id/26/800/600", 
+                "https://picsum.photos/id/28/800/600"
+            ]'>
+                <img class="carousel-img" src="https://picsum.photos/id/154/800/600" alt="Camp Magazine spread 1">
+                <!--<div class="carousel-counter">1/4</div>-->
+            </div>
         </div>
-        
+
+        <!-- PROJECT 2 -->
+        <div class="archive-project">
+            <div class="project-year">2023</div>
+            <div class="project-details">
+                <h3>LOST IN TRANSLATION — poster series</h3>
+                <p>Visual identity & typographic experiments. Screen-printed posters exploring miscommunication, glitch and linguistic gaps. Exhibited at Nha San Collective.</p>
+            </div>
+            <div class="carousel-container" data-images='[
+                "https://picsum.photos/id/116/800/600",
+                "https://picsum.photos/id/15/800/600",
+                "https://picsum.photos/id/22/800/600"
+            ]'>
+                <img class="carousel-img" src="https://picsum.photos/id/116/800/600" alt="Poster series detail">
+                <div class="carousel-counter">1/3</div>
+            </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="archive-project">
+            <div class="project-year">2022</div>
+            <div class="project-details">
+                <h3>SOIL & SOUND — web archive</h3>
+                <p>Interactive browser-based archive documenting field recordings from the red river delta. Custom cursor, lo-fi UI, and community contributions. (unpublished beta)</p>
+            </div>
+            <div class="carousel-container" data-images='[
+                "https://picsum.photos/id/96/800/600",
+                "https://picsum.photos/id/29/800/600",
+                "https://picsum.photos/id/175/800/600",
+                "https://picsum.photos/id/42/800/600",
+                "https://picsum.photos/id/59/800/600"
+            ]'>
+                <img class="carousel-img" src="https://picsum.photos/id/96/800/600" alt="Web archive interface">
+                <div class="carousel-counter">1/5</div>
+            </div>
+        </div>
+
+        <!-- PROJECT 4 : EXTRA DEMO -->
+        <div class="archive-project">
+            <div class="project-year">2021</div>
+            <div class="project-details">
+                <h3>FOLDING MONOCHROME</h3>
+                <p>Publication design & bookbinding workshop. Limited edition zine with folded spreads, black & white riso + metallic foil accents. Edition of 50.</p>
+            </div>
+            <div class="carousel-container" data-images='[
+                "https://picsum.photos/id/20/800/600",
+                "https://picsum.photos/id/33/800/600",
+                "https://picsum.photos/id/76/800/600"
+            ]'>
+                <img class="carousel-img" src="https://picsum.photos/id/20/800/600" alt="zine inner spread">
+                <div class="carousel-counter">1/3</div>
+            </div>
+        </div>
     </div>
+</main>
+
+<div class="footer">
+    <div class="footer-item"></div>
+    <div class="footer-item"></div>
+    <div class="footer-item">
+        <p>Copyright duydang2025. Website typeset in Atkinson Hyperlegible Mono.</p>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // Initialize all carousels: each .carousel-container becomes interactive
+        // left side click → previous image, right side click → next image
+        const carousels = document.querySelectorAll('.carousel-container');
+        
+        carousels.forEach(container => {
+            // Retrieve image array from data-images attribute
+            let imagesArray = [];
+            const rawData = container.getAttribute('data-images');
+            if (rawData) {
+                try {
+                    imagesArray = JSON.parse(rawData);
+                } catch(e) {
+                    console.warn('invalid json in data-images', e);
+                    imagesArray = [];
+                }
+            }
+            
+            // fallback: if empty or parsing failed, provide placeholder
+            if (!imagesArray.length) {
+                imagesArray = ['https://picsum.photos/id/1/800/600'];
+            }
+            
+            // get img element and counter inside this container
+            const imgEl = container.querySelector('.carousel-img');
+            const counterEl = container.querySelector('.carousel-counter');
+            if (!imgEl) return;
+            
+            let currentIndex = 0;
+            
+            // update image src & counter display
+            function updateCarousel() {
+                if (imagesArray.length === 0) return;
+                const newSrc = imagesArray[currentIndex];
+                imgEl.src = newSrc;
+                imgEl.alt = `Carousel image ${currentIndex+1} of ${imagesArray.length}`;
+                if (counterEl) {
+                    counterEl.textContent = `${currentIndex+1}/${imagesArray.length}`;
+                }
+            }
+            
+            // set initial state
+            if (imagesArray.length) {
+                imgEl.src = imagesArray[0];
+                if (counterEl) counterEl.textContent = `1/${imagesArray.length}`;
+            }
+            
+            // click handler: detect left/right side based on mouse X relative to container
+            function handleCarouselClick(event) {
+                // get container bounding rect
+                const rect = container.getBoundingClientRect();
+                // calculate click X relative to container width
+                const clickX = event.clientX - rect.left;
+                const width = rect.width;
+                const isLeftSide = clickX < width / 2;
+                
+                if (imagesArray.length <= 1) return; // no navigation if single image
+                
+                if (isLeftSide) {
+                    // previous image
+                    currentIndex = (currentIndex - 1 + imagesArray.length) % imagesArray.length;
+                } else {
+                    // next image
+                    currentIndex = (currentIndex + 1) % imagesArray.length;
+                }
+                updateCarousel();
+            }
+            
+            // attach click event to container (left/right detection)
+            container.addEventListener('click', handleCarouselClick);
+            
+            // tiny accessibility: keyboard navigation on focus? optional: we store carousel data
+            // also enable touch device compatibility (no extra needed, works with touch events)
+            container.style.touchAction = 'manipulation'; // better touch feedback
+            
+            // store additional metadata to avoid garbage collection
+            container._carouselData = {
+                imagesArray,
+                currentIndex,
+                update: updateCarousel
+            };
+        });
+        
+        // extra polish: if there are no images or broken links, keep stable 
+        // also ensures that any dynamically added projects would work, but for static page it's perfect
+        console.log('Archive carousels ready — click left/right side of any image to navigate');
+    })();
+</script>
 </body>
 </html>
