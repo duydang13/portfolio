@@ -107,8 +107,8 @@
             overflow: hidden;
             cursor: pointer;
             user-select: none;
-            aspect-ratio: 16 / 11;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            aspect-ratio: 1.414 / 1;
+            /*box-shadow: 0 2px 6px rgba(0,0,0,0.05);*/
         }
 
         .carousel-img {

@@ -51,8 +51,8 @@ body {
 
 #navigation {
     position: fixed;
-    top: 0;        /* adjust to match your header’s left gutter */
-    width: 100%;       /* or whatever the nav column’s width is */
+    top: 0;        /* adjust to match your header’s left gutter*/
+    width: 100%;       /*or whatever the nav column’s width is*/
     padding: 0.75%;
     left: 0;
     z-index: 100;
