@@ -94,6 +94,73 @@ body {
   text-align: right;   
 }
 
+#description .prodes-section {
+  margin-bottom: 2em; /* two line gaps between each section */
+}
+
+#description .prodes-section:last-child {
+  margin-bottom: 0;
+}
+
+#description .prodes-section h3 {
+  font-weight: 700;
+  margin: 0 0 1em; /* one line gap under the heading */
+}
+
+#description .prodes-section p {
+  margin: 0 0 1em; /* spacing between paragraphs inside a section */
+}
+
+#description .prodes-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Hidden by default */
+.prodes-more {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+/* Open state */
+.prodes-more.open {
+  max-height: 2000px; /* big enough to fit content */
+  opacity: 1;
+}
+
+/* Spacing inside the expanded block */
+.prodes-section {
+  margin-top: 2em;
+}
+
+.prodes-section h3 {
+  font-weight: 700;
+  margin: 0 0 1em;
+}
+
+.prodes-section p {
+  margin: 0 0 1em;
+}
+
+.prodes-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Toggle button */
+.prodes-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 1em;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  color: inherit;
+}
+
+
 /*────────────────────────────────────────────────────────
   Full-bleed photos
 ────────────────────────────────────────────────────────*/
